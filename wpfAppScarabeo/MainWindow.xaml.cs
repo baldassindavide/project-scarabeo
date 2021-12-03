@@ -23,6 +23,7 @@ namespace wpfAppScarabeo
         public MainWindow()
         {
             InitializeComponent();
+            int prova;
         }
     }
 }
