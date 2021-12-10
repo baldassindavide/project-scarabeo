@@ -18,12 +18,17 @@ namespace wpfAppScarabeo
     /// <summary>
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
-    public partial class mainForm : Window
+    public partial class MainWindow : Window
     {
-        public mainForm()
+        public MainWindow()
         {
             InitializeComponent();
         }
-        
+
+        private void bttConnect_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client(txtIp.Text, int.Parse(txtPort.Text), txtNickname.Text);
+            client.requestConnection();
+        }
     }
 }

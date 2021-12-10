@@ -11,28 +11,17 @@ namespace wpfAppScarabeo
     class ThreadServer
     {
         String IPEnemy;
-        int portEnemy;
-        public ThreadServer(String IPEnemy, int portEnemy)
+        int port;
+        public ThreadServer(String IPEnemy, int port)
         {
             this.IPEnemy = IPEnemy;
-            this.portEnemy = portEnemy;
+            this.port = port;
         }
 
         public void waitForConnection()
         {
-            bool done = false; // sentinella
-
-            var listener = new TcpListener(System.Net.IPAddress.Parse(IPEnemy), portEnemy); // ascolto ip e porta del nemico
-            listener.Start();
-
-            while (!done)
-            {
-                Console.Write("Waiting for connection...");
-                TcpClient client = listener.AcceptTcpClient();
-
-                Console.WriteLine("Connection accepted.");
-                NetworkStream ns = client.GetStream();
-            }
+            TcpClient client = new TcpClient(IPEnemy, port);
+            Byte[] data = new Byte[256]; // contiene i dati da ricevere o da mandare
         }
     }
 }

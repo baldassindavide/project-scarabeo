@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfAppScarabeo"
         mc:Ignorable="d"
-        Title="Connessione..." Height="179.276" Width="240.443">
+        Title="Connessione..." Height="257.143" Width="241.348">
     <Grid>
-        <TextBox x:Name="txtIp" HorizontalAlignment="Left" Height="23" Margin="66,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPort" HorizontalAlignment="Left" Height="23" Margin="66,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="IP:" HorizontalAlignment="Left" Margin="38,24,0,0" VerticalAlignment="Top"/>
-        <Label Content="Porta:" HorizontalAlignment="Left" Margin="21,66,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="bttConnect" Content="Connessione" HorizontalAlignment="Left" Margin="21,112,0,0" VerticalAlignment="Top" Width="192"/>
+        <TextBox x:Name="txtIp" HorizontalAlignment="Left" Height="23" Margin="63,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPort" HorizontalAlignment="Left" Height="23" Margin="63,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="IP:" HorizontalAlignment="Left" Margin="35,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Porta:" HorizontalAlignment="Left" Margin="18,62,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="bttConnect" Content="Connessione" HorizontalAlignment="Left" Margin="20,185,0,0" VerticalAlignment="Top" Width="192" Click="bttConnect_Click"/>
+        <Label Content="Nickname:" HorizontalAlignment="Left" Margin="18,135,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNickname" HorizontalAlignment="Left" Height="23" Margin="92,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

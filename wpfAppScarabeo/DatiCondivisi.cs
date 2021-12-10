@@ -8,5 +8,11 @@ namespace wpfAppScarabeo
 {
     class DatiCondivisi
     {
+        int port, IP;
+
+        public DatiCondivisi()
+        {
+
+        }
     }
 }
