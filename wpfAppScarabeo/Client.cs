@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -23,17 +24,18 @@ namespace wpfAppScarabeo
 
         public void requestConnection()
         {
-            UdpClient client = new UdpClient(port);
-            client.Connect(IPEnemy, port); // hostname / port
+            TcpClient c = new TcpClient("172.16.102.71", 667);
+            StreamWriter sw = new StreamWriter(c.GetStream());
+            sw.WriteLine("pit");
 
             // prendo il mio indirizzo ip
-            string hostName = Dns.GetHostName();
-            string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
+            //string hostName = Dns.GetHostName();
+            //string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
 
-            string sToSend = "C;" + myIP + ";" + nickname;
-            Byte[] byteToSend = Encoding.ASCII.GetBytes(sToSend); // converto la stringa contenuta nel pacchetto in un array di byte
-            client.Send(byteToSend, byteToSend.Length); // invio pacchetto
-            MessageBox.Show("Messaggio " + sToSend +" inviato");
+            //string sToSend = "C;" + myIP + ";" + nickname;
+            //Byte[] byteToSend = Encoding.ASCII.GetBytes(sToSend); // converto la stringa contenuta nel pacchetto in un array di byte
+            //client.Send(byteToSend, byteToSend.Length); // invio pacchetto
+            //MessageBox.Show("Messaggio " + sToSend +" inviato");
 
 
         }

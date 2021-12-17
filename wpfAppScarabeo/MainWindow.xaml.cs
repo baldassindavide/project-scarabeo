@@ -24,8 +24,8 @@ namespace wpfAppScarabeo
         public MainWindow()
         {
             InitializeComponent();
-            ThreadServer ts = new ThreadServer("1", 1);
-            ts.run();
+            Server s = new Server("1", 1);
+            s.start();
         }
 
         private void bttConnect_Click(object sender, RoutedEventArgs e)

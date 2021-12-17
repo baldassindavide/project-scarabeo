@@ -11,11 +11,11 @@ using System.Windows;
 
 namespace wpfAppScarabeo
 {
-    class ThreadServer
+    class Server
     {
         String IPEnemy;
         int port;
-        public ThreadServer(String IPEnemy, int port)
+        public Server(String IPEnemy, int port)
         {
             this.IPEnemy = IPEnemy;
             this.port = port;
@@ -35,7 +35,7 @@ namespace wpfAppScarabeo
             MessageBox.Show(s);
         }
 
-        public void run()
+        public void start()
         {
             Thread t = new Thread(waitForConnection);
             t.Start();
