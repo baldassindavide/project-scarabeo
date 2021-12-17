@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,8 @@ namespace wpfAppScarabeo
         public MainWindow()
         {
             InitializeComponent();
+            ThreadServer ts = new ThreadServer("1", 1);
+            ts.run();
         }
 
         private void bttConnect_Click(object sender, RoutedEventArgs e)

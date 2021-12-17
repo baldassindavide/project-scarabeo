@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace wpfAppScarabeo
 {
@@ -20,8 +23,22 @@ namespace wpfAppScarabeo
 
         public void waitForConnection()
         {
-            TcpClient client = new TcpClient(IPEnemy, port);
-            Byte[] data = new Byte[256]; // contiene i dati da ricevere o da mandare
+            String hostname = "172.16.102.76"; // my ip
+
+            IPAddress addr;
+            IPAddress.TryParse(hostname, out addr);
+            TcpListener listener = new TcpListener(addr, 666);
+            listener.Start();
+            TcpClient c = listener.AcceptTcpClient();
+            StreamReader sr = new StreamReader(c.GetStream());
+            String s = sr.ReadLine();
+            MessageBox.Show(s);
+        }
+
+        public void run()
+        {
+            Thread t = new Thread(waitForConnection);
+            t.Start();
         }
     }
 }
