@@ -14,9 +14,9 @@
         <TextBox x:Name="txtPort" HorizontalAlignment="Left" Height="23" Margin="108,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <Button x:Name="bttConnect" Content="INVIO RICHIESTA DI CONNESSIONE" HorizontalAlignment="Left" Margin="13,183,0,0" VerticalAlignment="Top" Width="203" Click="bttConnect_Click" Background="#FF6DDC6D" FontSize="9" FontFamily="Snap ITC" Height="19"/>
         <TextBox x:Name="txtNickname" HorizontalAlignment="Left" Height="23" Margin="108,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="13,138,0,0" TextWrapping="Wrap" Text="NICKNAME" VerticalAlignment="Top" Width="92" TextChanged="TextBox_TextChanged" FontFamily="Snap ITC" Background="#FFDDB577"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="0,56,0,0" TextWrapping="Wrap" Text="IP AVVERSARIO" VerticalAlignment="Top" Width="105" FontFamily="Snap ITC" Background="#FFDDB577" TextChanged="TextBox_TextChanged" FontSize="10"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="46,95,0,0" TextWrapping="Wrap" Text="PORTA" VerticalAlignment="Top" Width="57" FontFamily="Snap ITC" Background="#FFDDB577"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="28,138,0,0" TextWrapping="Wrap" Text="NICKNAME" VerticalAlignment="Top" Width="68" TextChanged="TextBox_TextChanged" FontFamily="Snap ITC" Background="#FFDDB577" FontSize="9"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="7,56,0,0" TextWrapping="Wrap" Text="IP AVVERSARIO" VerticalAlignment="Top" Width="96" FontFamily="Snap ITC" Background="#FFDDB577" TextChanged="TextBox_TextChanged" FontSize="9"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="52,95,0,0" TextWrapping="Wrap" Text="PORTA" VerticalAlignment="Top" Width="44" FontFamily="Snap ITC" Background="#FFDDB577" FontSize="9"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="46,0,0,0" TextWrapping="Wrap" Text="CONNESSIONE" VerticalAlignment="Top" Width="138" Background="#FFDDB577" FontFamily="Snap ITC" FontSize="14"/>
 
     </Grid>
