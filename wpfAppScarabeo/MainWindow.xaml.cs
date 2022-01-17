@@ -37,5 +37,10 @@ namespace wpfAppScarabeo
             client.requestConnection();*/
             window2.Show();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
