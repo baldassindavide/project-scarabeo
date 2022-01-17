@@ -57,17 +57,10 @@
     </ApplicationDefinition>
     <Compile Include="Client.cs" />
     <Compile Include="DatiCondivisi.cs" />
-    <Compile Include="gameField.xaml.cs">
-      <DependentUpon>gameField.xaml</DependentUpon>
-    </Compile>
     <Compile Include="gameField2.xaml.cs">
       <DependentUpon>gameField2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Server.cs" />
-    <Page Include="gameField.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="gameField2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
