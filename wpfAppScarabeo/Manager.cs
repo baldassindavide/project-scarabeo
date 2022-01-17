@@ -38,10 +38,22 @@ namespace wpfAppScarabeo
                         break;
 
                     case "P":
+                        dati.setTurno(true); // passa turno al nemico
+                        dati.addToEnemyScore(int.Parse(campi[campi.Length-1]));
                         break;
-
-
+                    case "LIN":
+                        for (int i = 1; i < campi.Length; i++)
+                        {
+                            Lettera l = new Lettera(campi[i][0],10);
+                            dati.addToSacchetto(l);
+                        }
+                        break;
+                    case "LOUT":
+                        for (int i = 1; i < campi.Length; i++)
+                            MessageBox.Show("");
+                        break;
                 }
+                counter++;
             }
         }
     }

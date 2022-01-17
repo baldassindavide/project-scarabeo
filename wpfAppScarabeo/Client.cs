@@ -26,7 +26,7 @@ namespace wpfAppScarabeo
         {
             TcpClient c = new TcpClient("172.16.102.71", 667);
             StreamWriter sw = new StreamWriter(c.GetStream());
-            sw.WriteLine("pit");
+            
 
             // prendo il mio indirizzo ip
             //string hostName = Dns.GetHostName();
