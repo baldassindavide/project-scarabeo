@@ -63,5 +63,10 @@ namespace wpfAppScarabeo
         {
             this.turno = turno;
         }
+
+        public void addToSacchetto(Lettera l)
+        {
+            listLettereSacchetto.Add(l);
+        }
     }
 }
