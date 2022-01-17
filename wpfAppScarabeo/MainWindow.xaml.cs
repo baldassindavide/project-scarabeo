@@ -21,17 +21,21 @@ namespace wpfAppScarabeo
     /// </summary>
     public partial class MainWindow : Window
     {
+        gameField2 window2;
         public MainWindow()
-        {
+        { 
             InitializeComponent();
-            Server s = new Server("1", 1);
-            s.start();
+            /*Server s = new Server("1", 1);
+            s.start();*/
+
+            window2 = new gameField2();
         }
 
         private void bttConnect_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client(txtIp.Text, int.Parse(txtPort.Text), txtNickname.Text);
-            client.requestConnection();
+            /*Client client = new Client(txtIp.Text, int.Parse(txtPort.Text), txtNickname.Text);
+            client.requestConnection();*/
+            window2.Show();
         }
     }
 }
