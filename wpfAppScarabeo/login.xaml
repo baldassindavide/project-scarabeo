@@ -11,10 +11,10 @@
             <ImageBrush ImageSource="backPaper.jpg"/>
         </Grid.Background>
         <Button x:Name="btnRichiesta" Content="INVIO RICHIESTA DI CONNESSIONE" HorizontalAlignment="Left" Margin="80,238,0,0" VerticalAlignment="Top" Width="279" Height="30" FontFamily="Snap ITC" Background="#FF51D876"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="80,125,0,0" TextWrapping="Wrap" Text="NICKNAME" VerticalAlignment="Top" Width="90" TextChanged="TextBox_TextChanged" FontFamily="Snap ITC" Background="#FFDDB577"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="114,125,0,0" TextWrapping="Wrap" Text="NICKNAME" VerticalAlignment="Top" Width="90" TextChanged="TextBox_TextChanged" FontFamily="Snap ITC" Background="#FFDDB577"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="80,185,0,0" TextWrapping="Wrap" Text="IP AVVERSARIO" VerticalAlignment="Top" Width="124" FontFamily="Snap ITC" Background="#FFDDB577"/>
-        <TextBox x:Name="txtNickname" HorizontalAlignment="Left" Height="23" Margin="223,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFDDB577"/>
-        <TextBox x:Name="txtIPAvversario" HorizontalAlignment="Left" Height="23" Margin="223,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFDDB577"/>
+        <TextBox x:Name="txtNickname" HorizontalAlignment="Left" Height="23" Margin="223,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFEAE7E2"/>
+        <TextBox x:Name="txtIPAvversario" HorizontalAlignment="Left" Height="23" Margin="223,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFEAE7E2"/>
         <TextBox HorizontalAlignment="Left" Height="43" Margin="126,28,0,0" TextWrapping="Wrap" Text="LOGIN" VerticalAlignment="Top" Width="152" FontSize="36" FontFamily="Snap ITC" Background="#FFDDB577"/>
 
     </Grid>
