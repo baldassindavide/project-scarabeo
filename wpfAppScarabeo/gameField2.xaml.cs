@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,9 +20,21 @@ namespace wpfAppScarabeo
     /// </summary>
     public partial class gameField2 : Window
     {
+        Manager m;
+        Thread trd;
         public gameField2()
         {
             InitializeComponent();
+            m = new Manager();
+            trd = new Thread(new ThreadStart(Manager.managerActions));
+            trd.IsBackground = true;
+            trd.Start();
+
+        }
+
+        private void btnInvia_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("bottone");
         }
     }
 }
