@@ -41,4 +41,4 @@ namespace wpfAppScarabeo
             t.Start();
         }
     }
-}//gg
+}//ggg
