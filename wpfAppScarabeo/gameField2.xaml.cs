@@ -28,8 +28,7 @@ namespace wpfAppScarabeo
 
         Button[] arrayButtonsLettere;
         List<Button> listButtonsPressed;
-        List<string> parolaFormata; // vincolo: creare la parola in linea
-        string parola;
+        string parola; // vincolo: creare la parola in linea
         public gameField2()
         {
             InitializeComponent();
@@ -41,7 +40,6 @@ namespace wpfAppScarabeo
 
             arrayButtonsLettere = new Button[] { bl1, bl2, bl3, bl4, bl5, bl6, bl7, bl8 }; // imposto array dei bottoni lettera
             listButtonsPressed = new List<Button>(); // max 8 elementi dato che ci sono 8 lettere disponibili
-            parolaFormata = new List<string>();
         }
         private void btnInvia_Click(object sender, RoutedEventArgs e)
         {
@@ -53,7 +51,10 @@ namespace wpfAppScarabeo
             {
                 if (line.Equals(parola.ToLower()))
                 {
-                    MessageBox.Show("TORVAOSDOASODAe");
+                    foreach(Button b in listButtonsPressed)
+                    {
+                        b.Background = Brushes.Green;
+                    }
                     trovato = true;
                 }
             }
@@ -62,7 +63,7 @@ namespace wpfAppScarabeo
             if (!trovato) 
                 MessageBox.Show("non trovato :(");
 
-            bReset_Click(null,null); // 
+            resetField(!trovato); // resetta solo gli 8 tasti personali
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -72,9 +73,8 @@ namespace wpfAppScarabeo
             {
                 source.Content = bufferLettera;
                 listButtonsPressed.Add(source);
-                parolaFormata.Add(bufferLettera); // formo la parola
 
-                parola += bufferLettera;
+                parola += bufferLettera; // formo la parola
             }
 
             bufferLettera = ""; // svuoto il buffer
@@ -92,18 +92,26 @@ namespace wpfAppScarabeo
 
         private void bReset_Click(object sender, RoutedEventArgs e)
         {
-            foreach(Button b in arrayButtonsLettere)
+            resetField(true);
+        }
+        
+        private void resetField(bool all) // se all è false, resetta solo le 8 lettere personali
+        {
+            if (all) {
+                foreach (Button b in listButtonsPressed)
+                {
+                    b.Content = "";
+                }
+            }
+
+            foreach (Button b in arrayButtonsLettere)
             {
                 b.Visibility = Visibility.Visible;
             }
 
-            foreach(Button b in listButtonsPressed)
-            {
-                b.Content = "";
-            }
+            
 
             listButtonsPressed.Clear(); // pulisco la lista
-            parolaFormata.Clear();
             parola = "";
         }
     }
