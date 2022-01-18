@@ -22,19 +22,38 @@ namespace wpfAppScarabeo
     {
         Manager m;
         Thread trd;
+
+        string bufferLettera;
         public gameField2()
         {
             InitializeComponent();
             m = new Manager();
-            trd = new Thread(new ThreadStart(Manager.managerActions));
+            trd = new Thread(new ThreadStart(m.managerActions));
             trd.IsBackground = true;
             trd.Start();
+
 
         }
 
         private void btnInvia_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("bottone");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button source = sender as Button;
+            if(bufferLettera != "")
+            {
+                source.Content = bufferLettera;
+            }
+
+            bufferLettera = ""; // svuoto il buffer
+        }
+        private void ButtonLetter_Click(object sender, RoutedEventArgs e)
+        {
+            Button source = sender as Button;
+            bufferLettera = source.Content.ToString();
         }
     }
 }
