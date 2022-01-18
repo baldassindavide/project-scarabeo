@@ -79,5 +79,7 @@ namespace wpfAppScarabeo
 
             listButtonsPressed.Clear(); // pulisco la lista
         }
+
+      
     }
 }
