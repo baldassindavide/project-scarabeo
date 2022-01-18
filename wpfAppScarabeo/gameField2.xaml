@@ -341,15 +341,15 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button x:Name="bl1" Content="A" HorizontalAlignment="Left" Margin="69,283,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bl2" Content="B" HorizontalAlignment="Left" Margin="69,318,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bl3" Content="C" HorizontalAlignment="Left" Margin="69,353,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bl4" Content="D" HorizontalAlignment="Left" Margin="69,388,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bl5" Content="E" HorizontalAlignment="Left" Margin="69,423,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bl6" Content="F" HorizontalAlignment="Left" Margin="69,458,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bl7" Content="G" HorizontalAlignment="Left" Margin="69,493,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bl8" Content="H" HorizontalAlignment="Left" Margin="69,528,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
-        <Button x:Name="bReset" Content="Reset Lettere" HorizontalAlignment="Left" Height="24" Margin="38,583,0,0" VerticalAlignment="Top" Width="93" Click="bReset_Click"/>
+        <Button x:Name="bl1" Content="A" HorizontalAlignment="Left" Margin="90,269,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bl2" Content="B" HorizontalAlignment="Left" Margin="90,304,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bl3" Content="C" HorizontalAlignment="Left" Margin="90,339,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bl4" Content="D" HorizontalAlignment="Left" Margin="90,374,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bl5" Content="E" HorizontalAlignment="Left" Margin="90,409,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bl6" Content="F" HorizontalAlignment="Left" Margin="90,444,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bl7" Content="G" HorizontalAlignment="Left" Margin="90,479,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bl8" Content="H" HorizontalAlignment="Left" Margin="90,514,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bReset" Content="Reset Lettere" HorizontalAlignment="Left" Height="24" Margin="59,569,0,0" VerticalAlignment="Top" Width="93" Click="bReset_Click"/>
 
     </Grid>
 </Window>
