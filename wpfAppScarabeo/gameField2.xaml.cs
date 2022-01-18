@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -27,6 +28,8 @@ namespace wpfAppScarabeo
 
         Button[] arrayButtonsLettere;
         List<Button> listButtonsPressed;
+        List<string> parolaFormata; // vincolo: creare la parola in linea
+        string parola;
         public gameField2()
         {
             InitializeComponent();
@@ -38,10 +41,28 @@ namespace wpfAppScarabeo
 
             arrayButtonsLettere = new Button[] { bl1, bl2, bl3, bl4, bl5, bl6, bl7, bl8 }; // imposto array dei bottoni lettera
             listButtonsPressed = new List<Button>(); // max 8 elementi dato che ci sono 8 lettere disponibili
+            parolaFormata = new List<string>();
         }
         private void btnInvia_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("bottone");
+            StreamReader file = new StreamReader("parole.txt");
+            string line = "";
+            bool trovato = false;
+             // cerco la parola
+            while ((line = file.ReadLine()) != null && trovato == false)
+            {
+                if (line.Equals(parola.ToLower()))
+                {
+                    MessageBox.Show("TORVAOSDOASODAe");
+                    trovato = true;
+                }
+            }
+            parola = "";
+
+            if (!trovato) 
+                MessageBox.Show("non trovato :(");
+
+            bReset_Click(null,null); // 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -51,6 +72,9 @@ namespace wpfAppScarabeo
             {
                 source.Content = bufferLettera;
                 listButtonsPressed.Add(source);
+                parolaFormata.Add(bufferLettera); // formo la parola
+
+                parola += bufferLettera;
             }
 
             bufferLettera = ""; // svuoto il buffer
@@ -62,6 +86,7 @@ namespace wpfAppScarabeo
             {
                 bufferLettera = source.Content.ToString();
                 source.Visibility = Visibility.Hidden;
+                
             }  
         }
 
@@ -78,6 +103,8 @@ namespace wpfAppScarabeo
             }
 
             listButtonsPressed.Clear(); // pulisco la lista
+            parolaFormata.Clear();
+            parola = "";
         }
     }
 }
