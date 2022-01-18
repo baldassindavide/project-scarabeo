@@ -24,6 +24,9 @@ namespace wpfAppScarabeo
         Thread trd;
 
         string bufferLettera;
+
+        Button[] arrayButtonsLettere;
+        List<Button> listButtonsPressed;
         public gameField2()
         {
             InitializeComponent();
@@ -33,8 +36,9 @@ namespace wpfAppScarabeo
             trd.Start();
 
 
+            arrayButtonsLettere = new Button[] { bl1, bl2, bl3, bl4, bl5, bl6, bl7, bl8 }; // imposto array dei bottoni lettera
+            listButtonsPressed = new List<Button>(); // max 8 elementi dato che ci sono 8 lettere disponibili
         }
-
         private void btnInvia_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("bottone");
@@ -46,6 +50,7 @@ namespace wpfAppScarabeo
             if(bufferLettera != "")
             {
                 source.Content = bufferLettera;
+                listButtonsPressed.Add(source);
             }
 
             bufferLettera = ""; // svuoto il buffer
@@ -53,7 +58,26 @@ namespace wpfAppScarabeo
         private void ButtonLetter_Click(object sender, RoutedEventArgs e)
         {
             Button source = sender as Button;
-            bufferLettera = source.Content.ToString();
+            if(!source.Content.ToString().Equals(""))
+            {
+                bufferLettera = source.Content.ToString();
+                source.Visibility = Visibility.Hidden;
+            }  
+        }
+
+        private void bReset_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(Button b in arrayButtonsLettere)
+            {
+                b.Visibility = Visibility.Visible;
+            }
+
+            foreach(Button b in listButtonsPressed)
+            {
+                b.Content = "";
+            }
+
+            listButtonsPressed.Clear(); // pulisco la lista
         }
     }
 }

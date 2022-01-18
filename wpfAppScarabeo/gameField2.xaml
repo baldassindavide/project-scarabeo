@@ -349,6 +349,7 @@
         <Button x:Name="bl6" Content="F" HorizontalAlignment="Left" Margin="69,458,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
         <Button x:Name="bl7" Content="G" HorizontalAlignment="Left" Margin="69,493,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
         <Button x:Name="bl8" Content="H" HorizontalAlignment="Left" Margin="69,528,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ButtonLetter_Click"/>
+        <Button x:Name="bReset" Content="Reset Lettere" HorizontalAlignment="Left" Height="24" Margin="38,583,0,0" VerticalAlignment="Top" Width="93" Click="bReset_Click"/>
 
     </Grid>
 </Window>
