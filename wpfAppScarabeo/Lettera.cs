@@ -8,7 +8,7 @@ namespace wpfAppScarabeo
 {
     class Lettera
     {
-        char lettera;
+        string lettera;
         int score;
 
         public Lettera()
@@ -16,13 +16,13 @@ namespace wpfAppScarabeo
             score = 0;
         }
 
-        public Lettera(char lettera, int score)
+        public Lettera(string lettera, int score)
         {
             this.lettera = lettera;
             this.score = score;
         }
 
-        public char getLettera()
+        public string getLettera()
         {
             return lettera;
         }
@@ -32,7 +32,7 @@ namespace wpfAppScarabeo
             return score;
         }
 
-        public void setLettera(char lettera)
+        public void setLettera(string lettera)
         {
             this.lettera = lettera;
         }

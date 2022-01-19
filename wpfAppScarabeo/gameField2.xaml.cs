@@ -23,6 +23,7 @@ namespace wpfAppScarabeo
     {
         Manager m;
         Thread trd;
+        DatiCondivisi d;
 
         string bufferLettera;
 
@@ -40,6 +41,13 @@ namespace wpfAppScarabeo
 
             arrayButtonsLettere = new Button[] { bl1, bl2, bl3, bl4, bl5, bl6, bl7, bl8 }; // imposto array dei bottoni lettera
             listButtonsPressed = new List<Button>(); // max 8 elementi dato che ci sono 8 lettere disponibili
+
+            foreach(Button b in arrayButtonsLettere)
+            {
+                Random r = new Random(DateTime.Now.Millisecond);
+                r.Next();
+            }
+
         }
         private void btnInvia_Click(object sender, RoutedEventArgs e)
         {

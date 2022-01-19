@@ -44,7 +44,7 @@ namespace wpfAppScarabeo
                     case "LIN":
                         for (int i = 1; i < campi.Length; i++)
                         {
-                            Lettera l = new Lettera(campi[i][0],10);
+                            Lettera l = new Lettera(campi[i][0].ToString(),10);
                             dati.addToSacchetto(l);
                         }
                         break;
