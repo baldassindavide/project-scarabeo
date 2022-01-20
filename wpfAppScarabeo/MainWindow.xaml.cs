@@ -36,6 +36,8 @@ namespace wpfAppScarabeo
             /*Client client = new Client(txtIp.Text, int.Parse(txtPort.Text), txtNickname.Text);
             client.requestConnection();*/
             window2.Show();
+            this.Close();
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
