@@ -31,12 +31,17 @@ namespace wpfAppScarabeo
         Button[] arrayButtonsLettere;
         List<Button> listButtonsPressed;
         string parola; // vincolo: creare la parola in linea
+        bool incrociato, primaParola; // prima parola serve per escludere un errore nell'obbligo di incrociare, dato che è la prima non incrocia nulla
         public gameField2()
         {
             InitializeComponent();
             m = new Manager();
             trd = new Thread(new ThreadStart(m.managerActions));
             d = new DatiCondivisi();
+
+            primaParola = true;
+            incrociato = false;
+
             trd.IsBackground = true;
             trd.Start();
 
@@ -54,7 +59,7 @@ namespace wpfAppScarabeo
 
         public string estraiLettera()
         {
-            
+
             Random r = new Random(DateTime.Now.Millisecond);
             Lettera randomLetter = d.getListLettereSacchetto()[r.Next(d.getListLettereSacchetto().Count - 1)]; // valore massimo = lunghezza lista
             d.removeLetteraFromSacchetto(randomLetter);
@@ -67,28 +72,37 @@ namespace wpfAppScarabeo
             string line = "";
             bool trovato = false;
             // cerco la parola
-            while ((line = file.ReadLine()) != null && trovato == false)
+            if (incrociato)
             {
-                if (line.Equals(parola.ToLower()))
+                while ((line = file.ReadLine()) != null && trovato == false)
                 {
-                    foreach (Button b in listButtonsPressed)
+                    if (line.Equals(parola.ToLower()))
                     {
-                        b.Background = Brushes.Green;
+                        foreach (Button b in listButtonsPressed)
+                        {
+                            b.Background = Brushes.Green;
+                        }
+                        trovato = true;
+                        primaParola = false;
+                        incrociato = false;
                     }
-                    trovato = true;
                 }
+                if (!trovato)
+                    MessageBox.Show("Parola non valida...");
             }
+            else
+                MessageBox.Show("Non hai incrociato!");
+
+
+
             parola = "";
-
-            if (!trovato)
-                MessageBox.Show("non trovato :(");
-
-            resetField(!trovato,false); // resetta solo gli 8 tasti personali
+            resetField(!trovato, false); // resetta solo gli 8 tasti personali
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button source = sender as Button;
+
             if (bufferLettera != "" && source.Content.ToString() == "")
             {
                 source.Content = bufferLettera;
@@ -99,8 +113,8 @@ namespace wpfAppScarabeo
             else if (source.Content.ToString() != null)
             {
                 parola += source.Content.ToString();
+                incrociato = true;
             }
-
 
             bufferLettera = ""; // svuoto il buffer
         }
@@ -119,12 +133,12 @@ namespace wpfAppScarabeo
 
         private void bReset_Click(object sender, RoutedEventArgs e)
         {
-            foreach(Button b in arrayButtonsLettere)
+            foreach (Button b in arrayButtonsLettere)
             {
-                d.getListLettereSacchetto().Add(new Lettera(b.Content.ToString(),1));
+                d.getListLettereSacchetto().Add(new Lettera(b.Content.ToString(), 1));
             }
             resetField(true, true);
-            
+
         }
 
         private void resetField(bool all, bool reset) // se all è false, resetta solo le 8 lettere personali
@@ -146,10 +160,10 @@ namespace wpfAppScarabeo
             foreach (Button b in arrayButtonsLettere)
             {
                 b.Visibility = Visibility.Visible;
-                if(!all)
-                for (int i = 0; i < ListBufferButton.Count; i++)
-                    if (b == ListBufferButton[i])
-                        b.Content = estraiLettera();
+                if (!all)
+                    for (int i = 0; i < ListBufferButton.Count; i++)
+                        if (b == ListBufferButton[i])
+                            b.Content = estraiLettera();
             }
 
 
