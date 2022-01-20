@@ -89,18 +89,23 @@ namespace wpfAppScarabeo
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button source = sender as Button;
-            if (bufferLettera != "")
+            if (bufferLettera != "" && source.Content.ToString() == "")
             {
                 source.Content = bufferLettera;
                 listButtonsPressed.Add(source);
 
                 parola += bufferLettera; // formo la parola
             }
+            else if (source.Content.ToString() != null)
+            {
+                parola += source.Content.ToString();
+            }
 
-           
 
             bufferLettera = ""; // svuoto il buffer
         }
+
+
         private void ButtonLetter_Click(object sender, RoutedEventArgs e)
         {
             Button source = sender as Button;
