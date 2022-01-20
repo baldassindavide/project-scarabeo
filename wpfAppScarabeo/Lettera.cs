@@ -41,5 +41,10 @@ namespace wpfAppScarabeo
         {
             this.score = score;
         }
+
+        public string toString()
+        {
+            return lettera;
+        }
     }
 }
