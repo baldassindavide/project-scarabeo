@@ -121,6 +121,16 @@ namespace wpfAppScarabeo
             gameField[xPos, yPos] = l;
         }
 
+        public int getLocalScore()
+        {
+            return localScore;
+        }
+
+        public void addToLocalScore(int quantity)
+        {
+            localScore += quantity;
+        }
+
         public Boolean isInGame()
         {
             return inGame;

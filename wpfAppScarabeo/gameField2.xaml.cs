@@ -31,7 +31,7 @@ namespace wpfAppScarabeo
         Button[] arrayButtonsLettere;
         List<Button> listButtonsPressed;
         string parola; // vincolo: creare la parola in linea
-        bool incrociato, primaParola; // prima parola serve per escludere un errore nell'obbligo di incrociare, dato che è la prima non incrocia nulla
+        bool incrociato;
         public gameField2()
         {
             InitializeComponent();
@@ -39,7 +39,6 @@ namespace wpfAppScarabeo
             trd = new Thread(new ThreadStart(m.managerActions));
             d = new DatiCondivisi();
 
-            primaParola = true;
             incrociato = false;
 
             trd.IsBackground = true;
@@ -83,8 +82,9 @@ namespace wpfAppScarabeo
                             b.Background = Brushes.Green;
                         }
                         trovato = true;
-                        primaParola = false;
                         incrociato = false;
+                        d.addToLocalScore(10);
+                        txtScore1.Text = d.getLocalScore().ToString();
                     }
                 }
                 if (!trovato)
